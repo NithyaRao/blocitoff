@@ -28,6 +28,23 @@ require 'faker'
  end
  items = Item.all
 
+ moderator = User.new(
+   name:     'Moderator User',
+   email:    'moderator@example.com',
+   password: 'helloworld'
+ )
+ moderator.skip_confirmation!
+ moderator.save!
+ 
+ # Create a member
+ member = User.new(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld'
+ )
+ member.skip_confirmation!
+ member.save!
+
  puts "Seed finished"
  puts "#{User.count} Users created"
  puts "#{Item.count} Items created"
