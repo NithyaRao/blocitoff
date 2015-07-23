@@ -3,4 +3,5 @@ FactoryGirl.define do
      sequence(:name, 100) { |n| "To-do Item#{n}" }
      user
    end
+
  end

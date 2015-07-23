@@ -3,8 +3,9 @@
   <br><br>
    <h4 id="list-centered"> To-Do list </h4>
    <ul class='list'>
-   <%= render @items %>
- </ul>
+       <%= render @items %>
+   </ul>
+
    <br>
        <%= render :template => "/items/_form.html.erb", locals: { user: @user, item: @item } %>
  </div>

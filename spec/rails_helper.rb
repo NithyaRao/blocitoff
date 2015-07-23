@@ -7,7 +7,9 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'capybara/dsl'
 require 'email_spec'
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -60,6 +62,8 @@ RSpec.configure do |config|
   config.include(EmailSpec::Matchers)
   config.include Features::SessionHelpers, type: :feature
   config.include Warden::Test::Helpers
+  config.include Capybara::DSL, :type => :feature
+  
   config.before :suite do
     Warden.test_mode!
   end

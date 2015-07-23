@@ -54,6 +54,11 @@ group :development, :test do
 
   #acceptance test framework for web applications
   gem 'capybara'
+
+ # for debugging ruby > 2
+  gem 'byebug'
+
+  gem 'web-console', '~> 2.0'
   
 end
 #  a Sass-powered version of Bootstrap, ready to drop right into your Sass powered applications.
