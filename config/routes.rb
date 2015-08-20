@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   end
   namespace :api, defaults: { format: :json } do
      resources :users do
-        resources :items, only: [:create]
+        resources :items, only: [:create, :destroy]
      end
      
-     resources :items, only: [:destroy]
-   end
+     end
   root to: 'welcome#index'
 end
