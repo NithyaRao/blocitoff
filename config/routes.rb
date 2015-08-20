@@ -4,7 +4,11 @@ Rails.application.routes.draw do
      resources :items, only: [:create, :destroy]
   end
   namespace :api, defaults: { format: :json } do
-     resources :users
+     resources :users do
+        resources :items, only: [:create]
+     end
+     
+     resources :items, only: [:destroy]
    end
   root to: 'welcome#index'
 end

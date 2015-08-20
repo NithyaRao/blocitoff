@@ -4,6 +4,7 @@ class ApiController < ApplicationController
 
  private
   def authenticated?
+    #debugger
    authenticate_or_request_with_http_basic {|email, password| User.find_by( email: email).valid_password?(password) }
   end
  end
